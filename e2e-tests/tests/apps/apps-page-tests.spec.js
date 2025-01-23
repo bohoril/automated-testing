@@ -2,9 +2,10 @@ import {expect, test} from '@playwright/test';
 import AppsPage from '../../page-objects/apps-page';
 import AppDetailsPage from '../../page-objects/app-details-page';
 import HomePage from '../../page-objects/home-page';
+import {LINKS} from "../../../constants";
 
 test('add favourite app', async ({page}) => {
-    await page.goto('LINK_TO_APPS_PAGE', {waitUntil: 'networkidle'});
+    await page.goto(LINKS.LINK_TO_APPS_PAGE, {waitUntil: 'networkidle'});
 
     const appsPage = new AppsPage(page);
     const targetAppTestId = await appsPage.selectLifestyleAppByIndex(0);
